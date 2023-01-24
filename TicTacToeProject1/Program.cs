@@ -13,13 +13,13 @@ namespace TicTacToeProject1
 
             //• Create a game board array to store the players’ choices
             string[] gameBoard = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-            bool gameOver = false;
+            string gameOver = "false";
             sp.PrintArray(gameBoard);
 
             //• Ask each player in turn for their choice and update the game board array
             int choice = 0;
             int player = 1;
-            if (gameOver == false)
+            if (sp.CheckWin[1] == "false")
             {
                 if (player % 2 != 0)
                 {
@@ -45,8 +45,7 @@ namespace TicTacToeProject1
 
             //• Check for a winner by calling the method in the supporting class, and notify the players
             //when a win has occurred and which player won the game
-
-           sp.CheckWin(gameBoard);
+            sp.CheckWin[0];
 
         }
     }
