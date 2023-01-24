@@ -23,7 +23,7 @@ namespace TicTacToeProject1
         }
 
         //Contain a method that receives the game board array as input and returns if there is a winner and who it was
-        public string CheckWin(string[] array)
+        public string[] CheckWin(string[] array, string gameOver)
         {
             string output = "";
 
@@ -31,44 +31,53 @@ namespace TicTacToeProject1
             if (array[0] == array[1] && array[1] == array[2])
             {
                 output = array[0] + " Wins!";
+                gameOver = "true";
             }
             else if (array[3] == array[4] && array[4] == array[5])
             {
                 output = array[3] + " Wins!";
+                gameOver = "true";
             }
             else if (array[6] == array[7] && array[7] == array[8])
             {
                 output = array[6] + " Wins!";
+                gameOver = "true";
             }
 
             //Vertical Win Conditions
             else if (array[0] == array[3] && array[3] == array[6])
             {
                 output = array[0] + " Wins!";
+                gameOver = "true";
             }
             else if (array[1] == array[4] && array[4] == array[7])
             {
                 output = array[1] + " Wins!";
+                gameOver = "true";
             }
             else if (array[2] == array[5] && array[5] == array[8])
             {
                 output = array[2] + " Wins!";
+                gameOver = "true";
             }
 
             //Diagonal Win Conditions
             else if (array[0] == array[4] && array[4] == array[8])
             {
                 output = array[0] + " Wins!";
+                gameOver = "true";
             }
             else if (array[2] == array[4] && array[4] == array[6])
             {
                 output = array[2] + " Wins!";
+                gameOver = "true";
             }
 
             //Tie Condition
             else if (array[0] != "1" && array[1] != "2" && array[2] != "3" && array[3] != "4" && array[4] != "5" && array[5] != "6" && array[6] != "7" && array[7] != "8" && array[8] != "9")
             {
                 output = "It's a Draw";
+                gameOver = "true";
             }
 
             //No Win Condition
@@ -77,7 +86,9 @@ namespace TicTacToeProject1
                 output = "\n";
             }
 
-            return output;
+            string[] outputArray = { output, gameOver };
+
+            return outputArray;
         }
     }
 }
