@@ -15,11 +15,12 @@ namespace TicTacToeProject1
             string[] gameBoard = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             string gameOver = "false";
             sp.PrintArray(gameBoard);
+            string[] checkResults = sp.CheckWin(gameBoard, gameOver);
 
             //• Ask each player in turn for their choice and update the game board array
             int choice = 0;
             int player = 1;
-            if (sp.CheckWin[1] == "false")
+            while (checkResults[1] == "false")//sp.CheckWin(gameBoard, gameOver)[1]
             {
                 if (player % 2 != 0)
                 {
@@ -45,8 +46,7 @@ namespace TicTacToeProject1
 
             //• Check for a winner by calling the method in the supporting class, and notify the players
             //when a win has occurred and which player won the game
-            sp.CheckWin[0];
-
+            Console.Write(checkResults[0]);
         }
     }
 }
