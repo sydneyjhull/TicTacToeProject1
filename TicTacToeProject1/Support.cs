@@ -6,7 +6,6 @@ namespace TicTacToeProject1
 {
     class Support
     {
-        //Receive the “board” array from the driver class
 
         //Contain a method that prints the board based on the information passed in
         public void PrintArray(string[] array)
