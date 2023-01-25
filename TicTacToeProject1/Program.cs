@@ -29,7 +29,7 @@ namespace TicTacToeProject1
                     player++;
                     gameBoard[choice - 1] = "X";
                     sp.PrintArray(gameBoard);
-                    sp.CheckWin(gameBoard, gameOver);
+                    checkResults = sp.CheckWin(gameBoard, gameOver);
                 }
                 else
                 {
@@ -38,7 +38,7 @@ namespace TicTacToeProject1
                     player++;
                     gameBoard[choice - 1] = "O";
                     sp.PrintArray(gameBoard);
-                    sp.CheckWin(gameBoard, gameOver);
+                    checkResults = sp.CheckWin(gameBoard, gameOver);
                 }
             }
             //• Print the board by calling the method in the supporting class
