@@ -22,11 +22,11 @@ namespace TicTacToeProject1
         }
 
         //Contain a method that receives the game board array as input and returns if there is a winner and who it was
-        public string[] CheckWin(string[] array, string gameOver)
+        public string[] CheckWin(string[] array, string gameOver) //Inputs are the array of values in the board, along with a string containing whether someone lost or won
         {
-            string output = "";
+            string output = ""; //Output will return a statement about who won
 
-            //Horizontal Win Conditions
+            //Horizontal Win Conditions in Tic Tac Toe
             if (array[0] == array[1] && array[1] == array[2])
             {
                 output = array[0] + " Wins!";
@@ -43,7 +43,7 @@ namespace TicTacToeProject1
                 gameOver = "true";
             }
 
-            //Vertical Win Conditions
+            //Vertical Win Conditions in Tic Tac Toe
             else if (array[0] == array[3] && array[3] == array[6])
             {
                 output = array[0] + " Wins!";
@@ -60,7 +60,7 @@ namespace TicTacToeProject1
                 gameOver = "true";
             }
 
-            //Diagonal Win Conditions
+            //Diagonal Win Conditions in Tic Tac Toe
             else if (array[0] == array[4] && array[4] == array[8])
             {
                 output = array[0] + " Wins!";
@@ -72,20 +72,20 @@ namespace TicTacToeProject1
                 gameOver = "true";
             }
 
-            //Tie Condition
+            //Tie Condition, if both X and O can't win
             else if (array[0] != "1" && array[1] != "2" && array[2] != "3" && array[3] != "4" && array[4] != "5" && array[5] != "6" && array[6] != "7" && array[7] != "8" && array[8] != "9")
             {
                 output = "It's a Draw";
                 gameOver = "true";
             }
 
-            //No Win Condition
+            //No Win Condition. If neither X nor O wins the game, but there are moves that can still be made
             else
             {
                 output = "\n";
             }
 
-            string[] outputArray = { output, gameOver };
+            string[] outputArray = { output, gameOver };//Returning two variables that will show whether someone has won to escape the loop, along with the output string to say who won
 
             return outputArray;
         }
